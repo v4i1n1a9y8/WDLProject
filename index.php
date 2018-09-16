@@ -6,7 +6,6 @@ HOME</title>
 div.tab {
     border: 2px solid lightblue;
     border-radius: 20px;
-    margin:auto;
 
     position: relative;
     width: 300px;
@@ -36,22 +35,18 @@ echo file_get_contents("modules/navigation.html");
 echo '<div id="mainbody">';
 ?>
 
-
-<div class="tab">
-<p><a href="browse.php" class="tablink">
-    <div>
-    BROWSE
+<div style="float:right;">
+    <div class="tab">
+    <p><a href="browse.php" class="tablink">
+        BROWSE
+    </a></p>
     </div>
-</a></p>
-</div>
-<div class="tab">
-<p><a href="compare.php" class="tablink">
-    <div>
-    COMPARE
+    <div class="tab">
+    <p><a href="compare.php" class="tablink">
+        COMPARE
+    </a></p>
     </div>
-</a></p>
 </div>
-
 
 <?php
 echo '</div>';
