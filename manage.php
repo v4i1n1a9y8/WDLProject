@@ -29,7 +29,7 @@ echo '<div id="mainbody">';
 <?php 
 if(isset($_POST["reset"])){
     try {
-        $sql = sprintf("DROP DATABASE %s",$dbname);
+        $sql = sprintf("DROP DATABASE IF EXISTS %s",$dbname);
         $conn->exec($sql);
         $sql = sprintf("CREATE DATABASE %s",$dbname);
         $conn->exec($sql);
