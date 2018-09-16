@@ -109,4 +109,7 @@ table ,td,th{
     border-collapse: collapse;
     border: 10px solid #ccc;
 }
+td,th {
+    padding:20px;
+}
 
