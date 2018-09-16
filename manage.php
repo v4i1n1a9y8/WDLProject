@@ -7,22 +7,24 @@ echo file_get_contents("modules/navigation.html");
 echo '<div id="mainbody">';
 ?>
 
+<div id="blob" style="float: left">
  <?php
 $servername = "localhost";
-$username = "username";
-$password = "password";
+$username = "root";
+$password = "root";
 
 try {
     $conn = new PDO("mysql:host=$servername", $username, $password);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";
+    echo "Database status: <strong style='color:green'>Connected</strong>" ;
     }
 catch(PDOException $e)
     {
-    echo "Connection failed: " . $e->getMessage();
+        echo "Database status: <strong style='color:red'>Disconnected</strong>" ;
     }
-?> 
+?>
+</div>
 
 <?php
 echo '</div>';

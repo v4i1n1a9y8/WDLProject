@@ -3,30 +3,7 @@ echo file_get_contents("modules/head1.html");
 ?>
 HOME</title>
 <style>
-div.tab {
-    border: 2px solid lightblue;
-    border-radius: 20px;
 
-    position: relative;
-    width: 300px;
-    height: 200px;
-    background: #aaa;
-    color: #000;
-    padding: 20px;  
-}
-a.tablink:link,a.tablink:visited,a.tablink:hover,a.tablink:active {
-    color: #ddd;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    font-size:40px;
-}
-div.tab:hover {
-    background-color: #ccc;
-}
 </style>
 <?php 
 echo file_get_contents("modules/head2.html");
@@ -36,18 +13,29 @@ echo '<div id="mainbody">';
 ?>
 
 <div style="float:right;">
-    <div class="tab">
-    <p><a href="browse.php" class="tablink">
+    <a href="index.php" class="blob" style="font-size:40px;">
+        HOME
+    </a>
+    <a href="browse.php" class="blob" style="font-size:40px;">
         BROWSE
-    </a></p>
-    </div>
-    <div class="tab">
-    <p><a href="compare.php" class="tablink">
+    </a>
+    <a href="compare.php" class="blob " style="font-size:40px;">
         COMPARE
-    </a></p>
+    </a>
+</div>
+<div style="float:left;">
+    <div class="blob" style="width:650px;height:1000px">
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
+        ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
+        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
+        officia deserunt mollit anim id est laborum.
+    </p>
     </div>
 </div>
-
 <?php
 echo '</div>';
 echo file_get_contents("modules/footer.html");

@@ -6,7 +6,7 @@ echo file_get_contents("modules/header.html");
 echo file_get_contents("modules/navigation.html");
 echo '<div id="mainbody">';
 ?>
- <table style="width:90%;margin:30px;border: 1px solid black;padding:50px;background-color:white">
+ <table class="blob">
     <tr>
         <th>Mobile Name</th>
         <th>Processor</th>
