@@ -35,6 +35,17 @@ function resetdb(){
             date TIMESTAMP
             )";
         $conn->exec($sql);
+        $sql = "CREATE TABLE users (
+            id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            name VARCHAR(30) NOT NULL,
+            password VARCHAR(30) NOT NULL,
+            type VARCHAR(50)
+            )";
+        $conn->exec($sql);
+        $sql = "INSERT INTO users (name,password,type) values ('root','password','admin')";
+        $conn->exec($sql);
+        $sql = "INSERT INTO users (name,password,type) values ('vinay','vinay','none')";
+        $conn->exec($sql);
         $sql = "INSERT INTO mobiles (name, company,processor,ram,date)
                 VALUES ('Honor7X', 'Huawei', 'kirin 659','4gb',now())";
         $conn->exec($sql);
@@ -68,4 +79,7 @@ function addmobile($name,$company,$processor,$ram){
     echo $sql . "<br>" . $e->getMessage();
     }
 }
+
+
+
 ?>
