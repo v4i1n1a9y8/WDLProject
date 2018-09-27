@@ -19,7 +19,9 @@ catch(PDOException $e)
     }
 
 function resetdb(){
+    global $conn,$dbname;
     try {
+        echo $connected;
         $sql = sprintf("DROP DATABASE IF EXISTS %s",$dbname);
         $conn->exec($sql);
         $sql = sprintf("CREATE DATABASE %s",$dbname);
@@ -44,5 +46,26 @@ function resetdb(){
         {
         echo $sql . "<br>" . $e->getMessage();
         }
+}
+function usedb() {
+    global $conn,$dbname;
+    $sql = "USE ".$dbname;
+    $conn->exec($sql);
+}
+function addmobile($name,$company,$processor,$ram){
+    global $conn,$dbname;
+    usedb();
+    try {
+        $sql = sprintf("INSERT INTO mobiles (name,company,processor,ram) values('%s','%s','%s','%s')"
+                ,$name
+                ,$company
+                ,$processor
+                ,$ram);
+        $conn->exec($sql);
+    }
+    catch(PDOException $e)
+    {
+    echo $sql . "<br>" . $e->getMessage();
+    }
 }
 ?>

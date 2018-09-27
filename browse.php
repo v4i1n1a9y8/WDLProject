@@ -9,6 +9,7 @@ echo '<div id="mainbody">';
 <?php    
     try {
         require "database/config.php";
+        usedb();
         $sql = "SELECT name,company,processor,ram from mobiles";
         $statement = $conn->query($sql);
         }

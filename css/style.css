@@ -1,17 +1,20 @@
 /*-----------------------------------------------*/
 :root{
-    --primarycolor: #eee;
-    --secondarycolor: #bbb;
+    --primarycolor: #444;
+    --secondarycolor: #0af;
     --navcolor: #666;
+    --background: #222;
 }
 
 * {
     box-sizing: border-box;
+    color: #00aaff;
 }
 
 body {
-    background-color:  #d3d3d3;
+    /*background-color:  var(--background);*/
     margin: 0;
+    background-image: url("background.png");
 }
 #page {
     width: 1000px;
@@ -83,11 +86,32 @@ body {
 }
 /*-----------------------------------------------*/
 
+.nblob {
+    display:block;
+    background-color: var(--navcolor);
+    border:10px solid var(--secondarycolor);
+    border-radius:10px;
+    margin:5px;
+    font-size: 24px;
+    padding: 0 10px ;
+}
+a.nblob:hover {
+    background-color: grey;
+}
+a.nblob:link,a.nblob:visited,a.nblob:active {
+    color: #0af;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+
 .blob {
     display:block;
-    background: #ddd;
-    border:20px solid #ccc;
-    border-radius:20px;
+    background: var(--primarycolor);
+    border:10px solid var(--secondarycolor);
+    border-radius:10px;
     margin:10px;
     padding: 20px;
     font-size: 20px;
@@ -107,7 +131,7 @@ a.blob:link,a.blob:visited,a.blob:active {
 
 table ,td,th{
     border-collapse: collapse;
-    border: 10px solid #ccc;
+    border: 10px solid var(--secondarycolor);
 }
 td,th {
     padding:20px;
