@@ -8,9 +8,7 @@ echo '<div id="mainbody">';
 ?>
 <?php    
     try {
-        require "data/config.php";
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        require "database/config.php";
         $sql = "SELECT name,company,processor,ram from mobiles";
         $statement = $conn->query($sql);
         }
