@@ -7,7 +7,6 @@ echo file_get_contents("modules/navigation.html");
 echo '<div id="mainbody">';
 ?>
 
-
 <?php
 echo '</div>';
 echo file_get_contents("modules/footer.html");
