@@ -3,49 +3,71 @@ echo file_get_contents("modules/head1.html");
 echo "Compare";
 echo file_get_contents("modules/head2.html");
 echo file_get_contents("modules/header.html");
-echo file_get_contents("modules/navigation.html");
+include "modules/navigation.php";
 echo '<div id="mainbody">';
 ?>
 
-<div class="blob">
-<h3>LOGIN</h3>
-<hr>
-<form method="post">
-Name:       <input type="text" name="name"      ><br><hr>
-Password:   <input type="text" name="password"   ><br><hr>
-<input type="submit" name="login" value="login">
-</form>
+
 <?php
 require_once "database/config.php";
-if(isset($_POST["login"])){
-    usedb();
-    $admin=false;
-    $loggedin=false;
-    try {
-        $sql = sprintf("select password,type from users where name='%s'"
-                ,$_POST["name"]);
-        $statement = $conn->query($sql);
-        $var = $statement->fetch();
-        if($var>0 && $var[0]==$_POST["password"])
-        {
+if(!$loggedin) {
+    echo "<div class='blob'>
+    <h3>LOGIN</h3>
+    <hr>
+    <form method='post'>
+    Name:       <input type='text' name='username'      ><br><hr>
+    Password:   <input type='text' name='password'   ><br><hr>
+    <input type='submit' name='login' value='login'>
+    </form>";
+    if(isset($_POST["login"])){
+        usedb();
+        $admin=false;
+        $loggedin=false;
+        try {
+            $sql = sprintf("select password,type from users where username='%s'"
+                    ,$_POST["username"]);
+            $statement = $conn->query($sql);
+            $var = $statement->fetch();
+            if($var>0 && $var[0]==$_POST["password"])
+            {
+                $loggedin=true;
+                $token = md5(uniqid(rand(), true));
+                setcookie("token",$token,time() + (86400 * 30),"/");
+                $sql = sprintf("update users set token='%s' where 
+                        username='%s' and password='%s'",
+                        $token,
+                        $_POST["username"]
+                        ,$_POST["password"]);
+                $conn->exec($sql);
+            }
+            if($var>0 && $var[1]=="admin")
+            {
+                $admin=true;
+                echo "lol";
+            }
+            #echo "<script type='text/javascript'>alert('done');</script>";
+            header("Refresh:0");
+        }
+        catch (PDOException $e) {
             $loggedin=true;
+            echo $sql." ".$e->getMessage();
+            #echo "<script type='text/javascript'>alert('notdone');</script>";
         }
-        if($var>0 && $var[1]=="admin")
-        {
-            $admin=true;
-            echo "lol";
+    }
+}
+?>
+
+<?php 
+if($loggedin){
+    header("Refresh:0;url=index.php");
+    echo "<form method='post'>
+        <input type='submit' name='logout' value='Logout'>
+    </form>";
+    if(isset($_POST["logout"])){
+        if(isset($_COOKIE["token"])){
+            setcookie("token",'',time() + (86400 * 30),"/");
+            header("Refresh:0;url=index.php");
         }
-        unset($_POST["login"]);
-    }
-    catch (PDOException $e) {
-        $loggedin=true;
-        echo $sql." ".$e->getMessage();
-    }
-    if($loggedin) {
-        echo "<script type='text/javascript'>alert('done');</script>";
-    }
-    else {
-        echo "<script type='text/javascript'>alert('notdone');</script>";
     }
 }
 ?>

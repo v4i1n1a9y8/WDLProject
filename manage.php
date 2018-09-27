@@ -3,7 +3,7 @@ echo file_get_contents("modules/head1.html");
 echo "Browse";
 echo file_get_contents("modules/head2.html");
 echo file_get_contents("modules/header.html");
-echo file_get_contents("modules/navigation.html");
+include "modules/navigation.php";
 echo '<div id="mainbody">';
 ?>
 
@@ -20,12 +20,23 @@ echo '<div id="mainbody">';
 ?>
 <br><br><br>
 <form method="post">
-    <input type="submit" name="reset" value="Reset Database">
+    <input style="color:black" type="submit" name="reset" value="Reset Database">
 </form>
 <?php 
 if(isset($_POST["reset"])){
     resetdb();
     unset($_POST["reset"]);
+}
+?>
+<br><br><br>
+<form method="post">
+    <input style="color:black" type="submit" name="deletecookies" value="Delete Cookies">
+</form>
+<?php 
+if(isset($_POST["deletecookies"])){
+    if(isset($_COOKIE["token"])){
+        setcookie("token",'',time() + (86400 * 30),"/");
+    }
 }
 ?>
 </div>
@@ -38,7 +49,7 @@ Name:       <input type="text" name="name"      ><br><hr>
 Company:    <input type="text" name="company"   ><br><hr>
 Processor:  <input type="text" name="processor" ><br><hr>
 Ram:        <input type="text" name="ram"       ><br><hr>
-<input type="submit" name="insert" value="Add">
+<input style="color:black" type="submit" name="insert" value="Add">
 </form>
 <?php
 if(isset($_POST["insert"])){

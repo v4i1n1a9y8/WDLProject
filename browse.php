@@ -3,12 +3,12 @@ echo file_get_contents("modules/head1.html");
 echo "Browse";
 echo file_get_contents("modules/head2.html");
 echo file_get_contents("modules/header.html");
-echo file_get_contents("modules/navigation.html");
+include "modules/navigation.php";
 echo '<div id="mainbody">';
 ?>
 <?php    
     try {
-        require "database/config.php";
+        require_once "database/config.php";
         usedb();
         $sql = "SELECT name,company,processor,ram from mobiles";
         $statement = $conn->query($sql);
