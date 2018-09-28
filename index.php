@@ -12,16 +12,10 @@ include "modules/navigation.php";
 echo '<div id="mainbody">';
 ?>
 
-<div style="float:right;">
-    <a href="index.php" class="blob" style="font-size:40px;">
-        HOME
-    </a>
-    <a href="browse.php" class="blob" style="font-size:40px;">
-        BROWSE
-    </a>
-    <a href="compare.php" class="blob " style="font-size:40px;">
-        COMPARE
-    </a>
+<div class="blob"  style="width:30%;height:50%;float:right;padding-top:0px;">
+    <h5>Updates</h5>
+    <hr>
+    <marquee direction = "up">The direction of text will be from bottom to top.</marquee>
 </div>
 <div style="float:left;">
     <div class="blob" style="width:650px;height:1000px">

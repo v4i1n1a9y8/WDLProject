@@ -16,8 +16,9 @@ if(!$loggedin) {
     <hr>
     <form method='post'>
     Name:       <input type='text' name='username'      ><br><hr>
-    Password:   <input type='text' name='password'   ><br><hr>
+    Password:   <input type='password' name='password'   ><br><hr>
     <input type='submit' name='login' value='login'>
+    <input type='submit' name='signup' value='signup'>
     </form>";
     if(isset($_POST["login"])){
         usedb();
@@ -54,6 +55,27 @@ if(!$loggedin) {
             #echo "<script type='text/javascript'>alert('notdone');</script>";
         }
     }
+
+    /*if(isset($_POST["signup"])){
+        try {
+            usedb();
+            $sql = sprintf("select * from users where username='%s'"
+                ,$_POST["username"]);
+            $statement = $conn->query($sql);
+            $var = $statement->fetch();
+            echo $var[1];
+            if($var[1]!=$_POST["username"]){
+                $sql = printf("insert into users (username,password) values('%s','%s')"
+                        ,$_POST["username"]
+                        ,$_POST["password"]);
+                $conn->exec($sql);
+            }
+        }
+        catch (PDOException $e) {
+            echo $sql." ".$e->getMessage();
+            #echo "<script type='text/javascript'>alert('notdone');</script>";
+        }
+    }*/
 }
 ?>
 

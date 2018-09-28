@@ -89,7 +89,7 @@ body {
 .nblob {
     display:block;
     background-color: var(--navcolor);
-    border:10px solid var(--secondarycolor);
+    border:5px solid var(--secondarycolor);
     border-radius:10px;
     margin:5px;
     font-size: 24px;
@@ -110,7 +110,7 @@ a.nblob:link,a.nblob:visited,a.nblob:active {
 .blob {
     display:block;
     background: var(--primarycolor);
-    border:10px solid var(--secondarycolor);
+    border:5px solid var(--secondarycolor);
     border-radius:10px;
     margin:10px;
     padding: 20px;
