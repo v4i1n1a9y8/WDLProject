@@ -1,7 +1,7 @@
 /*-----------------------------------------------*/
 :root{
-    --primarycolor: #444;
-    --secondarycolor: #666;
+    --primarycolor: #666;
+    --secondarycolor: #888;
     --navcolor: #666;
     --background: #222;
 }
@@ -12,6 +12,7 @@
 }
 
 body {
+    font-size: 20px;
     /*background-color:  var(--background);*/
     margin: 0;
     background-image: url("background.png");
@@ -30,14 +31,14 @@ body {
 }
 
 #header {
-    height: 90px;
-    font-size: 80px;
+    height: 70px;
+    font-size: 65px;
     width: 800px;
     margin-bottom: 0;
     margin-left: auto;
     margin-right: auto;
 }
-
+/*
 #navigation {
     background: var(--navcolor);
     width: 1000px;
@@ -67,7 +68,7 @@ body {
 #navigation-menu li a:hover {
     background-color: grey;
 }
-
+*/
 #mainbody {
     display: block;
     min-height: 800px;
@@ -129,22 +130,20 @@ a.blob:link,a.blob:visited,a.blob:active {
 }
 
 
-table ,td,th{
-    border-collapse: collapse;
-    border: 10px solid var(--secondarycolor);
-}
-td,th {
-    padding:20px;
-}*/
+*/
 /*---------------------------------------------*/
 .blob {
     display:block;
     background: var(--secondarycolor);
     margin:10px;
     padding: 20px;
-    font-size: 20px;
+    float:left;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.blob:hover {
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.2), 0 20px 50px 0 rgba(0, 0, 0, 0.19);
+}
 a.blob:hover {
     background-color: #bbb;
 }
@@ -154,4 +153,17 @@ a.blob:link,a.blob:visited,a.blob:active {
     top: 0;
     left: 0;
     z-index: 10;
+}
+
+table ,td,th{
+    border-collapse: collapse;
+    border: 10px solid var(--secondarycolor);
+}
+td,th {
+    padding:20px;
+}
+
+nav {
+    margin-top: 1px;
+    margin-bottom: 1px;
 }

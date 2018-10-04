@@ -24,6 +24,7 @@ try {
         #echo $var[0]."<br>";
         #echo $var[1]."<br>";
         #echo $var[2];
+        if($var !=null){
         if(sizeof($var)>1){
             if($var[2]=="admin")
             {
@@ -31,7 +32,7 @@ try {
             }
             $loggedin = true;
             #echo $admin;
-        }
+        }}
         }
         catch(PDOException $e){
             echo $sql." ".$e->getMessage();
@@ -43,7 +44,6 @@ catch(PDOException $e)
     {
         #echo "Database status: <strong style='color:red'>Disconnected</strong>" ;
         $connected=false;
-        echo "lol";
         echo $e->getMessage();
     }
 function resetdb(){

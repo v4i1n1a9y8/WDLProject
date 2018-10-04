@@ -10,7 +10,6 @@ echo '<div id="mainbody">';
 <?php
 require_once "database/config.php";
 
-echo "<br> lol"
 ?>
 <?php
 echo '</div>';

@@ -15,10 +15,10 @@ if(!$loggedin) {
     <h3>LOGIN</h3>
     <hr>
     <form method='post'>
-    Name:       <input type='text' name='username'      ><br><hr>
-    Password:   <input type='password' name='password'   ><br><hr>
-    <input type='submit' name='login' value='login'>
-    <input type='submit' name='signup' value='signup'>
+    Name:       <input style='color:black' type='text' name='username'      ><br><hr>
+    Password:   <input style='color:black' type='password' name='password'   ><br><hr>
+    <input style='color:black' type='submit' name='login' value='login'>
+    <input style='color:black' type='submit' name='signup' value='signup'>
     </form>";
     if(isset($_POST["login"])){
         usedb();
