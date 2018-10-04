@@ -1,14 +1,14 @@
 /*-----------------------------------------------*/
 :root{
     --primarycolor: #444;
-    --secondarycolor: #0af;
+    --secondarycolor: #666;
     --navcolor: #666;
     --background: #222;
 }
 
 * {
     box-sizing: border-box;
-    color: #00aaff;
+    color: white;
 }
 
 body {
@@ -85,7 +85,7 @@ body {
     line-height: 20px;
 }
 /*-----------------------------------------------*/
-
+/*
 .nblob {
     display:block;
     background-color: var(--navcolor);
@@ -135,5 +135,23 @@ table ,td,th{
 }
 td,th {
     padding:20px;
+}*/
+/*---------------------------------------------*/
+.blob {
+    display:block;
+    background: var(--secondarycolor);
+    margin:10px;
+    padding: 20px;
+    font-size: 20px;
 }
 
+a.blob:hover {
+    background-color: #bbb;
+}
+a.blob:link,a.blob:visited,a.blob:active {
+    color: #000;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
