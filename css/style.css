@@ -168,6 +168,6 @@ nav {
     margin-bottom: 1px;
 }
 
-input {
+input,option,select{
     color:black;
 }
