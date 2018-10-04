@@ -12,10 +12,16 @@ include "modules/navigation.php";
 echo '<div id="mainbody">';
 ?>
 
-<div class="blob"  style="width:30%;height:50%;float:right;padding-top:0px;">
+<div class="blob"  style="width:30%;height:80%;float:right;padding-top:0px;">
     <h5>Updates</h5>
     <hr>
-    <marquee direction = "up">The direction of text will be from bottom to top.</marquee>
+    <marquee direction = "up">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
+        ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
+        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
+        officia deserunt mollit anim id est laborum.</marquee>
 </div>
 <div style="float:left;">
     <div class="blob" style="width:650px;height:1000px">

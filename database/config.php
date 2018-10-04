@@ -1,8 +1,8 @@
 <?php
 
-$servername = "localhost";
+$servername = "127.0.0.1:3306";
 $username = "root";
-$password = "admin@123";
+$password = "root";
 $dbname   = "compare";
 $connected = false;
 $admin = false;
@@ -43,6 +43,7 @@ catch(PDOException $e)
     {
         #echo "Database status: <strong style='color:red'>Disconnected</strong>" ;
         $connected=false;
+        echo "lol";
         echo $e->getMessage();
     }
 function resetdb(){
