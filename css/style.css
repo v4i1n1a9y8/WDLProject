@@ -28,6 +28,7 @@ body {
     background-color: var(--primarycolor);
     position: relative;
     z-index: 5;
+    box-shadow: 0 8px 20px 0 black, 0 12px 40px 0 black;
 }
 
 #header {
@@ -148,7 +149,7 @@ a.blob:hover {
     background-color: #bbb;
 }
 a.blob:link,a.blob:visited,a.blob:active {
-    color: #000;
+    color: white;
     position: relative;
     top: 0;
     left: 0;
@@ -163,9 +164,9 @@ td,th {
     padding:20px;
 }
 
-nav {
-    margin-top: 1px;
-    margin-bottom: 1px;
+.nav {
+    text-decoration: none;
+    margin:0 10 0 10;
 }
 
 input,option,select{
