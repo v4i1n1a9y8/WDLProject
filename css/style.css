@@ -9,6 +9,7 @@
 * {
     box-sizing: border-box;
     color: white;
+    font-family: Arial, sans-serif;
 }
 
 body {
@@ -33,7 +34,7 @@ body {
 
 #header {
     height: 70px;
-    font-size: 65px;
+    font-size: 60px;
     width: 800px;
     margin-bottom: 0;
     margin-left: auto;

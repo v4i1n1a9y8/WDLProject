@@ -11,7 +11,7 @@ echo '<div id="mainbody">';
 <?php
     require_once "database/config.php";
     if($connected){
-        echo "Database status: <strong style='color:green'>Connected</strong>" ;
+        echo "Database status: <strong style='color:lime'>Connected</strong>" ;
     }
     else {
         echo "Database status: <strong style='color:red'>Disconnected</strong>" ;
