@@ -109,6 +109,14 @@ function addmobile($name,$company,$processor,$ram){
     }
 }
 
-
+function getUname() {
+    global $conn,$dbname;
+    usedb();
+    $sql = sprintf("select username from users where token='%s'"
+                ,$_COOKIE["token"]);
+    $statement = $conn->query($sql);
+    $var = $statement->fetch();
+    return $var[0];
+}
 
 ?>

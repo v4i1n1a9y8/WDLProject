@@ -56,26 +56,37 @@ if(!$loggedin) {
         }
     }
 
-    /*if(isset($_POST["signup"])){
+    if(isset($_POST["signup"])){
         try {
-            usedb();
+
+            $sql = "use compare;";
+            $conn->exec($sql);
             $sql = sprintf("select * from users where username='%s'"
                 ,$_POST["username"]);
             $statement = $conn->query($sql);
             $var = $statement->fetch();
-            echo $var[1];
+            #echo $var[1];
+            #echo $_POST["username"];
             if($var[1]!=$_POST["username"]){
-                $sql = printf("insert into users (username,password) values('%s','%s')"
-                        ,$_POST["username"]
-                        ,$_POST["password"]);
-                $conn->exec($sql);
+                $stmt = $conn->prepare("INSERT INTO users (username, password) 
+                VALUES (:username, :password)");
+                $stmt->bindParam(':username', $username);
+                $stmt->bindParam(':password', $password);
+
+                $username = $_POST["username"];
+                $password = $_POST["password"];
+                $stmt->execute();
+
+            }
+            else {
+                echo "username exists";
             }
         }
         catch (PDOException $e) {
-            echo $sql." ".$e->getMessage();
+            echo "<br>error:".$sql." ".$e->getMessage();
             #echo "<script type='text/javascript'>alert('notdone');</script>";
         }
-    }*/
+    }
 }
 ?>
 

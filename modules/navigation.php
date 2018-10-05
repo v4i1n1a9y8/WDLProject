@@ -6,7 +6,7 @@
 <?php
 include_once "database/config.php";
 if($loggedin){
-echo "<a class='blob nav' style='float:right;background-color:red;' href='../logout.php'>Logout</a>";
+echo "<a class='blob nav' style='float:right;background-color:red;' href='../logout.php'>".getUname()." Logout</a>";
 }else{
 echo "<a class='blob nav' style='float:right' href='../login.php'>Login</a>";
 
