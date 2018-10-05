@@ -1,15 +1,15 @@
 /*-----------------------------------------------*/
 :root{
-    --primarycolor: #666;
-    --secondarycolor: #888;
+    --primarycolor: #222629;
+    --secondarycolor: #474b4f;
     --navcolor: #666;
     --background: #222;
 }
 
 * {
     box-sizing: border-box;
-    color: white;
-    font-family: Arial, sans-serif;
+    color: #86c232;
+    font-family: Open sans, sans-serif;
 }
 
 body {
@@ -34,7 +34,7 @@ body {
 
 #header {
     height: 70px;
-    font-size: 60px;
+    font-size: 55px;
     width: 800px;
     margin-bottom: 0;
     margin-left: auto;
@@ -140,11 +140,11 @@ a.blob:link,a.blob:visited,a.blob:active {
     margin:10px;
     padding: 20px;
     float:left;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 2px 4px 0 #6b6e70, 0 4px 12px 0 #6b6e70;
 }
 
 .blob:hover {
-    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.2), 0 20px 50px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 6px 10px 0 #6b6e70, 0 8px 25px 0 #6b6e70;
 }
 a.blob:hover {
     background-color: #bbb;
