@@ -8,7 +8,6 @@
 
 * {
     box-sizing: border-box;
-    color: #86c232;
     font-family: Open sans, sans-serif;
 }
 
@@ -33,6 +32,7 @@ body {
 }
 
 #header {
+    color: #16ffbd;
     height: 70px;
     font-size: 55px;
     width: 800px;
@@ -137,6 +137,7 @@ a.blob:link,a.blob:visited,a.blob:active {
 .blob {
     display:block;
     background: var(--secondarycolor);
+    color:white;
     margin:10px;
     padding: 20px;
     float:left;
@@ -166,10 +167,22 @@ td,th {
 }
 
 .nav {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #05ac4a;
     text-decoration: none;
     margin:0 10 0 10;
 }
 
 input,option,select{
     color:black;
+}
+
+.mobile {
+    border-radius: 15px;
+    background-color: #05ac4a;
+    float:left;
+    width:150px;
+    height:150px;
+    margin:50px;
 }

@@ -1,19 +1,14 @@
 <?php 
 echo file_get_contents("modules/head1.html"); 
-?>
-HOME</title>
-<style>
-
-</style>
-<?php 
+echo "HOME";
 echo file_get_contents("modules/head2.html");
 echo file_get_contents("modules/header.html");
 include "modules/navigation.php";
 echo '<div id="mainbody">';
 ?>
 
-<div class="blob"  style="width:30%;height:65%;float:right;padding-top:0px;">
-    <h5>Updates</h5>
+<div class="blob"  style="width:30%;height:55%;float:right;padding-top:0px;padding-bottom:0px">
+    <h3>Updates</h3>
     <hr>
     <marquee direction = "up">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 

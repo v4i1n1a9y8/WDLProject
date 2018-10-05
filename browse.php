@@ -12,6 +12,7 @@ echo '<div id="mainbody">';
         usedb();
         $sql = "SELECT name,company,processor,ram from mobiles";
         $statement = $conn->query($sql);
+        $array = $conn->query($sql)->fetchall(PDO::FETCH_ASSOC);
         }
     catch(PDOException $e)
         {
@@ -19,31 +20,37 @@ echo '<div id="mainbody">';
         }
 
 ?>
- <table class="blob">
-    <thead>
-        <tr>
-            <th>Mobile Name</th>
-            <th>Company</th>
-            <th>Processor</th>
-            <th>RAM</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php 
-        $rowCount = $statement->rowCount()?>
-        <?php for ($x = 0; $x < $rowCount; $x++) { 
-        $result =  $statement->fetchObject();
-        ?>
-            <tr>
-                <td><?php echo $result->name; ?></td>
-                <td><?php echo $result->company; ?></td>
-                <td><?php echo $result->processor; ?></td>
-                <td><?php echo $result->ram; ?></td>
-            </tr>
-        <?php } ?> 
-    <tbody>
+<div class="blob" style="padding-left:80px;">
+<a class="blob mobile" href="browse.php">
+    <div >
+<img src="images/nexus6p.jpeg" style="
+    width:100px;
+    height:90px;">
+    </div>
+Honor7x
+</a>
 
-</table> 
+<a class="blob mobile" href="browse.php">
+<img src="css/phone.png" style="width:30%;height:30%">
+Honor7x
+</a>
+<a class="blob mobile" href="browse.php">
+<img src="css/phone.png" style="width:30%;height:30%">
+Honor7x
+</a>
+<a class="blob mobile" href="browse.php">
+<img src="css/phone.png" style="width:30%;height:30%">
+Honor7x
+</a>
+<a class="blob mobile" href="browse.php">
+<img src="css/phone.png" style="width:30%;height:30%">
+Honor7x
+</a>
+<a class="blob mobile" href="browse.php">
+<img src="css/phone.png" style="width:30%;height:30%">
+Honor7x
+</a>
+</div>
 <?php
 echo '</div>';
 echo file_get_contents("modules/footer.html");
