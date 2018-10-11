@@ -7,7 +7,7 @@ include "modules/navigation.php";
 echo '<div id="mainbody">';
 ?>
 
-<div class="blob"  style="width:30%;height:55%;float:right;padding-top:0px;padding-bottom:0px">
+<div class="blob"  style="overflow:hidden;width:30%;height:40%;float:right;padding-top:0px;padding-bottom:0px">
     <h3>Updates</h3>
     <hr>
     <marquee direction = "up">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 

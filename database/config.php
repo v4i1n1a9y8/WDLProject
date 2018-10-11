@@ -1,8 +1,8 @@
 <?php
 
-$servername = "127.0.0.1:3306";
+$servername = "localhost";
 $username = "root";
-$password = "root";
+$password = "";
 $dbname   = "compare";
 $connected = false;
 $admin = false;
