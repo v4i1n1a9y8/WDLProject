@@ -77,6 +77,16 @@ if(!$loggedin) {
                 $password = $_POST["password"];
                 $stmt->execute();
 
+                $loggedin=true;
+                $token = md5(uniqid(rand(), true));
+                setcookie("token",$token,time() + (86400 * 30),"/");
+                $sql = sprintf("update users set token='%s' where 
+                        username='%s' and password='%s'",
+                        $token,
+                        $_POST["username"]
+                        ,$_POST["password"]);
+                $conn->exec($sql);
+
             }
             else {
                 echo "username exists";
