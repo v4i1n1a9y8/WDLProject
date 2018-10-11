@@ -59,7 +59,7 @@ if(!$loggedin) {
     if(isset($_POST["signup"])){
         try {
 
-            $sql = "use compare;";
+            $sql = "use $dbname;";
             $conn->exec($sql);
             $sql = sprintf("select * from users where username='%s'"
                 ,$_POST["username"]);
