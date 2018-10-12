@@ -7,22 +7,9 @@ include "modules/navigation.php";
 echo '<div id="mainbody">';
 ?>
 
-<?php    
-    try {
-        require_once "database/config.php";
-        usedb();
-        $sql = "SELECT name,company,processor,ram from mobiles";
-        $statement = $conn->query($sql);
-        $array = $statement->fetchall(PDO::FETCH_ASSOC);
-        }
-    catch(PDOException $e)
-        {
-        echo $sql . "<br>" . $e->getMessage();
-        }
+<div id="leftmob" style="float:left"></div>
 
-    foreach ($array as $mobile) {
-    }
-?>
+<div id="rightmob" style="float:right"></div>
 
 
 
@@ -31,3 +18,25 @@ echo '<div id="mainbody">';
 echo '</div>';
 echo file_get_contents("modules/footer.html");
 ?>
+
+
+<script>  //AJAX 
+    $(document).ready(function(){
+
+    leftmobile();
+
+    function leftmobile()
+    {
+    $.ajax({
+    type: 'POST',
+    url:"database/getMobile.php",
+    dataType: "json",
+    data:({"id":1}),
+    success:function(data){
+        $('#leftmob').html(data);
+    }
+    })
+    }
+    
+    });  
+</script>
