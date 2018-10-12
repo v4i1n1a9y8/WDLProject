@@ -89,7 +89,7 @@ body {
 }
 /*-----------------------------------------------*/
 /*
-.nblob {
+.nblock {
     display:block;
     background-color: var(--navcolor);
     border:5px solid var(--secondarycolor);
@@ -98,10 +98,10 @@ body {
     font-size: 24px;
     padding: 0 10px ;
 }
-a.nblob:hover {
+a.nblock:hover {
     background-color: grey;
 }
-a.nblob:link,a.nblob:visited,a.nblob:active {
+a.nblock:link,a.nblock:visited,a.nblock:active {
     color: #0af;
     position: relative;
     top: 0;
@@ -110,7 +110,7 @@ a.nblob:link,a.nblob:visited,a.nblob:active {
 }
 
 
-.blob {
+.block {
     display:block;
     background: var(--primarycolor);
     border:5px solid var(--secondarycolor);
@@ -120,10 +120,10 @@ a.nblob:link,a.nblob:visited,a.nblob:active {
     font-size: 20px;
 }
 
-a.blob:hover {
+a.block:hover {
     background-color: #bbb;
 }
-a.blob:link,a.blob:visited,a.blob:active {
+a.block:link,a.block:visited,a.block:active {
     color: #000;
     position: relative;
     top: 0;
@@ -134,7 +134,7 @@ a.blob:link,a.blob:visited,a.blob:active {
 
 */
 /*---------------------------------------------*/
-.blob {
+.block {
     display:block;
     background: var(--secondarycolor);
     color:white;
@@ -144,13 +144,13 @@ a.blob:link,a.blob:visited,a.blob:active {
     box-shadow: 0 2px 4px 0 #6b6e70, 0 4px 12px 0 #6b6e70;
 }
 
-.blob:hover {
+.block:hover {
     box-shadow: 0 6px 10px 0 #6b6e70, 0 8px 25px 0 #6b6e70;
 }
-a.blob:hover {
+a.block:hover {
     background-color: #bbb;
 }
-a.blob:link,a.blob:visited,a.blob:active {
+a.block:link,a.block:visited,a.block:active {
     color: white;
     position: relative;
     top: 0;

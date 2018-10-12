@@ -7,7 +7,7 @@ include "modules/navigation.php";
 echo '<div id="mainbody">';
 ?>
 
-<div class="blob"  style="overflow:hidden;width:30%;height:40%;float:right;padding-top:0px;padding-bottom:0px">
+<div class="block"  style="overflow:hidden;width:30%;height:40%;float:right;padding-top:0px;padding-bottom:0px">
     <h3>Updates</h3>
     <hr>
     <marquee direction = "up">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
@@ -19,7 +19,7 @@ echo '<div id="mainbody">';
         officia deserunt mollit anim id est laborum.</marquee>
 </div>
 <div style="float:left;">
-    <div class="blob" style="width:650px;height:1000px">
+    <div class="block" style="width:650px;height:1000px">
     <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 

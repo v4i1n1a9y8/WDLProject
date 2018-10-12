@@ -2,7 +2,7 @@
 <?php
 require_once "database/config.php";
 if(!$loggedin) {
-    echo "<div class='blob' style='z-index: 1;float:none'>
+    echo "<div class='block' style='z-index: 1;float:none'>
     <h3>LOGIN</h3>
     <hr>
     <form method='post'>

@@ -7,7 +7,7 @@ include "modules/navigation.php";
 echo '<div id="mainbody">';
 ?>
 
-<div class="blob" >
+<div class="block" >
 <?php
     require_once "database/config.php";
     if($connected){
@@ -41,7 +41,7 @@ if(isset($_POST["deletecookies"])){
 ?>
 </div>
 
-<div class="blob">
+<div class="block">
 <h3>Add a new mobile</h3>
 <hr>
 <form method="post">

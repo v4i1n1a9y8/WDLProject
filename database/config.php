@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "admin@123";
 $dbname   = "compare";
 $connected = false;
 $admin = false;

@@ -11,7 +11,7 @@ echo '<div id="mainbody">';
 <?php
 require_once "database/config.php";
 if(!$loggedin) {
-    echo "<div class='blob'>
+    echo "<div class='block'>
     <h3>LOGIN</h3>
     <hr>
     <form method='post'>

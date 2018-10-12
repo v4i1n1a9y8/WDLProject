@@ -7,7 +7,7 @@ include "modules/navigation.php";
 echo '<div id="mainbody">';
 ?>
 
-<div class="blob" style="width:950px;height:500px">
+<div class="block" style="width:950px;height:500px">
 about
 nothing yet...
 </div>

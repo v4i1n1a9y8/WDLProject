@@ -20,8 +20,8 @@ echo '<div id="mainbody">';
         }
 
 ?>
-<div class="blob" style="padding-left:80px;">
-<a class="blob mobile" href="browse.php">
+<div class="block" style="padding-left:80px;">
+<a class="block mobile" href="browse.php">
     <div >
 <img src="images/nexus6p.jpeg" style="
     width:100px;
@@ -30,23 +30,23 @@ echo '<div id="mainbody">';
 Honor7x
 </a>
 
-<a class="blob mobile" href="browse.php">
+<a class="block mobile" href="browse.php">
 <img src="css/phone.png" style="width:30%;height:30%">
 Honor7x
 </a>
-<a class="blob mobile" href="browse.php">
+<a class="block mobile" href="browse.php">
 <img src="css/phone.png" style="width:30%;height:30%">
 Honor7x
 </a>
-<a class="blob mobile" href="browse.php">
+<a class="block mobile" href="browse.php">
 <img src="css/phone.png" style="width:30%;height:30%">
 Honor7x
 </a>
-<a class="blob mobile" href="browse.php">
+<a class="block mobile" href="browse.php">
 <img src="css/phone.png" style="width:30%;height:30%">
 Honor7x
 </a>
-<a class="blob mobile" href="browse.php">
+<a class="block mobile" href="browse.php">
 <img src="css/phone.png" style="width:30%;height:30%">
 Honor7x
 </a>
