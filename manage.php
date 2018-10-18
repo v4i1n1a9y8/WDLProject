@@ -1,63 +1,31 @@
-<?php 
-include "modules/head1.php";
-echo "Browse";
-echo file_get_contents("modules/head2.html");
-echo file_get_contents("modules/header.html");
-include "modules/navigation.php";
-echo '<div id="mainbody">';
-?>
+<?php //LOGIN
+  include("database/dbconnect.php");
+  session_start();
 
-<div class="block" >
-<?php
-    require_once "database/config.php";
-    if($connected){
-        echo "Database status: <strong style='color:lime'>Connected</strong>" ;
-    }
-    else {
-        echo "Database status: <strong style='color:red'>Disconnected</strong>" ;
-    }
-    
+ if(isset($_POST["reset"])){
+     resetdb();
+     unset($_POST["reset"]);
+ }
 ?>
-<br><br><br>
-<form method="post">
-    <input style="color:black" type="submit" name="reset" value="Reset Database">
-</form>
-<?php 
-if(isset($_POST["reset"])){
-    resetdb();
-    unset($_POST["reset"]);
-}
-?>
-<br><br><br>
-<form method="post">
-    <input style="color:black" type="submit" name="deletecookies" value="Delete Cookies">
-</form>
-<?php 
-if(isset($_POST["deletecookies"])){
-    if(isset($_COOKIE["token"])){
-        setcookie("token",'',time() + (86400 * 30),"/");
-    }
-}
-?>
-</div>
+<html>
+    <head>
+        <title>Home</title>
+        <?php echo file_get_contents("modules/head.html");?>
+    </head>
+<body>
+<div id="page">
+<?php echo file_get_contents("modules/header.html");?>
+<?php   include "modules/navigation.php";?>
+<div id="mainbody">
 
-<div class="block">
-<h3>Add a new mobile</h3>
-<hr>
-<form method="post">
-Name:       <input type="text" name="name"      ><br><hr>
-Company:    <input type="text" name="company"   ><br><hr>
-Processor:  <input type="text" name="processor" ><br><hr>
-Ram:        <input type="text" name="ram"       ><br><hr>
-<input style="color:black" type="submit" name="insert" value="Add">
-</form>
-<?php
-if(isset($_POST["insert"])){
-    addmobile($_POST["name"],$_POST["company"],$_POST["processor"],$_POST["ram"]);
-}
-?>
+    <div class="block" >
+    <form method="post">
+        <input style="color:black" type="submit" name="reset" value="Reset Database">
+    </form>
+    </div>
+
 </div>
-<?php
-echo '</div>';
-echo file_get_contents("modules/footer.html");
-?>
+<?php echo file_get_contents("modules/footer.html");?>
+</div>
+</body>
+</html>

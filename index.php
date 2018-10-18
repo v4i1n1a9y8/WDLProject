@@ -1,12 +1,18 @@
-<?php 
-include "modules/head1.php";
-echo "HOME";
-echo file_get_contents("modules/head2.html");
-echo file_get_contents("modules/header.html");
-include "modules/navigation.php";
-echo '<div id="mainbody">';
-?>
+<?php //LOGIN
+  include("database/dbconnect.php");
+  session_start();
 
+?>
+<html>
+    <head>
+        <title>Home</title>
+        <?php echo file_get_contents("modules/head.html");?>
+</head>
+<body>
+<div id="page">
+<?php echo file_get_contents("modules/header.html");?>
+<?php   include "modules/navigation.php";?>
+<div id="mainbody">
 <div class="block"  style="overflow:hidden;width:30%;height:40%;float:right;padding-top:0px;padding-bottom:0px">
     <h3>Updates</h3>
     <hr>
@@ -31,7 +37,10 @@ echo '<div id="mainbody">';
     </p>
     </div>
 </div>
-<?php
-echo '</div>';
-echo file_get_contents("modules/footer.html");
-?>
+</div>
+<?php echo file_get_contents("modules/footer.html");?>
+</div>
+</body>
+</html>
+
+

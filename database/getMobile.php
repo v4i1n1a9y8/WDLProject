@@ -1,9 +1,9 @@
 <?php
-
-require "config.php";
+$id = intval($_GET['id']);
+include("dbconnect.php");
 
 $sql = "
-SELECT * FROM mobiles;
+SELECT * FROM mobiles where mobile_id=$id;
 ";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
@@ -15,6 +15,11 @@ $output="
 
 foreach($result as $row){
     $output .= '
+    <tr>
+    <td><td><img style="
+    width:100px;
+    height:100px;" src="'.$row['image'].'"></td>
+    </tr>
     <tr>
     <td>Name:</td><td>'.$row['name'].'</td>
     </tr>
@@ -30,6 +35,7 @@ foreach($result as $row){
     ';
 }
     $output .="</table>";
-    echo $_POST["id"];
+
+    echo $output;
 
 ?>

@@ -1,17 +1,26 @@
-<?php 
-include "modules/head1.php";
-echo "About";
-echo file_get_contents("modules/head2.html");
-echo file_get_contents("modules/header.html");
-include "modules/navigation.php";
-echo '<div id="mainbody">';
-?>
+<?php //LOGIN
+  include("database/dbconnect.php");
+  session_start();
 
-<div class="block" style="width:950px;height:500px">
-about
-nothing yet...
-</div>
-<?php
-echo '</div>';
-echo file_get_contents("modules/footer.html");
 ?>
+<html>
+    <head>
+        <title>Home</title>
+        <?php echo file_get_contents("modules/head.html");?>
+    </head>
+<body>
+<div id="page">
+<?php echo file_get_contents("modules/header.html");?>
+<?php   include "modules/navigation.php";?>
+<div id="mainbody">
+
+
+nothing
+
+</div>
+<?php echo file_get_contents("modules/footer.html");?>
+</div>
+</body>
+</html>
+
+

@@ -1,57 +1,85 @@
-<?php 
-include "modules/head1.php";
-echo "Browse";
-echo file_get_contents("modules/head2.html");
-echo file_get_contents("modules/header.html");
-include "modules/navigation.php";
-echo '<div id="mainbody">';
-?>
-<?php    
-    try {
-        require_once "database/config.php";
-        usedb();
-        $sql = "SELECT name,company,processor,ram from mobiles";
-        $statement = $conn->query($sql);
-        $array = $conn->query($sql)->fetchall(PDO::FETCH_ASSOC);
-        }
-    catch(PDOException $e)
+<?php //LOGIN
+  include("database/dbconnect.php");
+  session_start();
+
+  $mobiles = "";
+  
+
+
+  $query = "
+  SELECT * FROM mobiles
+  ";
+  $statement = $conn->prepare($query);
+  $statement->execute();
+  $count = $statement->rowCount();
+    if($count > 0)
+    {
+        $result = $statement->fetchAll();
+        foreach($result as $row)
         {
-        echo $sql . "<br>" . $e->getMessage();
+            $mobiles .="
+            <a id=".$row["mobile_id"]." class='block mobile' href='browse.php'>
+            <img src=".$row["image"]." style='
+            width:100px;
+            height:90px;'>"
+            ."<br>".$row["mobile_id"]." ".$row["name"].
+            "</a>";
         }
+    }
+    else
+    {
+    $message = "<label>WrongL Username</label>";
+    }
 
 ?>
-<div class="block" style="padding-left:80px;">
-<a class="block mobile" href="browse.php">
-    <div >
-<img src="images/nexus6p.jpeg" style="
-    width:100px;
-    height:90px;">
+<html>
+    <head>
+        <title>Browse</title>
+        <?php echo file_get_contents("modules/head.html");?>
+    </head>
+<body>
+<div id="page">
+<?php echo file_get_contents("modules/header.html");?>
+<?php   include "modules/navigation.php";?>
+<div id="mainbody">
+
+    <div class="block" style="padding-left:80px;">
+    <a class="block mobile" href="browse.php">
+        <div >
+    <img src="images/nexus6p.jpeg" style="
+        width:100px;
+        height:90px;">
+        </div>
+    Honor7x
+    </a>
+
+    
+    <?php echo $mobiles ?>
+    <div id="last_mobile_loader"></div>
+
     </div>
-Honor7x
-</a>
 
-<a class="block mobile" href="browse.php">
-<img src="css/phone.png" style="width:30%;height:30%">
-Honor7x
-</a>
-<a class="block mobile" href="browse.php">
-<img src="css/phone.png" style="width:30%;height:30%">
-Honor7x
-</a>
-<a class="block mobile" href="browse.php">
-<img src="css/phone.png" style="width:30%;height:30%">
-Honor7x
-</a>
-<a class="block mobile" href="browse.php">
-<img src="css/phone.png" style="width:30%;height:30%">
-Honor7x
-</a>
-<a class="block mobile" href="browse.php">
-<img src="css/phone.png" style="width:30%;height:30%">
-Honor7x
-</a>
 </div>
-<?php
-echo '</div>';
-echo file_get_contents("modules/footer.html");
-?>
+<?php echo file_get_contents("modules/footer.html");?>
+</div>
+</body>
+</html>
+
+
+<script type="text/javascript">/*
+var processing;
+
+$(document).ready(function(){
+
+    $(window).scroll(function(){
+ 
+ var position = $(window).scrollTop() ;
+ var bottom = $(document).height() - $(window).height();
+
+ if( position == bottom ){
+    $('#last_mobile_loader').append("<a class='block mobile' href='browse.php'></a>");
+ }
+
+});
+});*/
+</script>
