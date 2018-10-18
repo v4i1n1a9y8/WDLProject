@@ -2,6 +2,20 @@
   include("database/dbconnect.php");
   session_start();
 
+  $mobiles="";
+  $query = "
+SELECT * FROM mobiles
+";
+$statement = $conn->prepare($query);
+$statement->execute();
+$result = $statement->fetchAll(PDO::FETCH_ASSOC);
+$count = $statement->rowCount();
+  if($count > 0)
+  {
+    foreach($result as $row){
+        $mobiles.="<option value=".$row["mobile_id"].">".$row["name"]."</option>";
+    }
+  }
 ?>
 <html>
     <head>
@@ -35,9 +49,11 @@ function showMobile(str,num) {
 <div class=block>
 <form>
 <select name="select1" onchange="showMobile(this.value,1)">
-<option value="">Select a person:</option>
-<option value="1">Honor 7x</option>
-<option value="2">Nexus 6p</option>
+<option value="">Select a mobile:</option>
+<?php echo $mobiles?>
+<?php
+
+?>
 </select>
 </form>
 
@@ -47,9 +63,8 @@ function showMobile(str,num) {
 <div class=block style="float:right">
 <form>
 <select name="select2" onchange="showMobile(this.value,2)">
-<option value="">Select a person:</option>
-<option value="1">Honor 7x</option>
-<option value="2">Nexus 6p</option>
+<option value="">Select a mobile:</option>
+<?php echo $mobiles?>
 </select>
 </form>
 

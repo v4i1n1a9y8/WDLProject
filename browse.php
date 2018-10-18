@@ -18,7 +18,7 @@
         foreach($result as $row)
         {
             $mobiles .="
-            <a id=".$row["mobile_id"]." class='block mobile' href='browse.php'>
+            <a id=".$row["mobile_id"]." class='block mobile' href='mobile.php?id=".$row["mobile_id"]."'>
             <img src=".$row["image"]." style='
             width:100px;
             height:90px;'>"
