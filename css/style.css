@@ -186,3 +186,43 @@ input,option,select{
     height:150px;
     margin:50px;
 }
+
+.abc {
+    
+    display:block;
+    background: var(--secondarycolor);
+    color:white;
+    height: 200px;
+    margin:10px;
+    padding-left: 20px;
+    float:left;
+    box-shadow: 0 2px 4px 0 #6b6e70, 0 4px 12px 0 #6b6e70;
+    padding: 40px;
+}
+
+.login{
+
+    padding-left: 200px;
+    padding-top: 10px;
+    height: 500px;
+}
+.text{
+
+    padding: 10px;
+
+
+}
+.label{
+
+    padding: 10px;
+    
+
+
+}
+.button{
+    background-color: #05ac4a;
+    border-radius: 10px;
+    margin:0 100 0 100;
+    height: 30px;
+    width: 100px;
+}

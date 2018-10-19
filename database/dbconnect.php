@@ -2,7 +2,7 @@
 
 $servername = "localhost:";
 $username = "root";
-$password = "root";
+$password = "admin@123";
 $dbname   = "compare";
 
 $conn = new PDO("mysql:host=localhost;dbname=$dbname", $username, $password);
@@ -38,7 +38,8 @@ function resetdb() {
     ");
 
     $stmt=$conn->prepare("INSERT INTO mobiles (name,company,os,processor,ram,image) VALUES(?,?,?,?,?,?)");
-    $stmt->execute(["Honor 7x","Huawei","android","Kirin 659","4GB","images/honor7x.jpg"]);
-    $stmt->execute(["Nexus 6p","Huawei","android","Snapdragon 810","3GB","images/nexus6p.jpeg"]);
+    $stmt->execute(["Honor 7x","Huawei","android","Kirin 659","4GB","images/honor7x.png"]);
+    $stmt->execute(["Nexus 6p","Huawei","android","Snapdragon 810","3GB","images/nexus6p.png"]);
+    $stmt->execute(["Redmi Note 5 Pro","Xiaomi","android","Snapdragon 636","4GB","images/note5pro.jpeg"]);
     }
 ?>

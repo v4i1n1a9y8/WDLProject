@@ -48,22 +48,22 @@
         <?php echo file_get_contents("modules/head.html");?>
     </head>
     <body>
-    <div id="page">
+    <div  id="page">
     <?php echo file_get_contents("modules/header.html");?>
     <?php   include "modules/navigation.php";?>
-    <div id="mainbody">
-    <form method="post"  class="block" >
+    <div  id="mainbody" class="login">
+    <form method="post"  class="abc" >
         <p ><?php echo $message; ?></p>
-        <div >
-        <label>Enter Username</label>
+        <div class="text">
+        <label class="label">Enter Username</label>
         <input type="text" name="username" required />
         </div>
-        <div>
-        <label>Enter Password</label>
+        <div class="text">
+        <label class="label">Enter Password</label>
         <input type="password" name="password" required />
         </div>
-        <div>
-        <input type="submit" name="login" value="Login" />
+        <div >
+        <input class="button" type="submit" name="login" value="Login" />
         </div>
         </form>
     </div>

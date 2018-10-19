@@ -15,7 +15,9 @@
 <div id="mainbody">
 
 
-nothing
+<div class="block" style="width:960px;height:700px">
+
+</div>
 
 </div>
 <?php echo file_get_contents("modules/footer.html");?>
