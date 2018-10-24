@@ -11,7 +11,7 @@ if(!isset($_SESSION['user_id']))
 }
 else 
 {
-    $var = getUserName($_SESSION["user_id"]);
+    $var = $_SESSION["username"];
     echo "<a class='block nav' style='float:right;background-color:red' href='../logout.php'>$var Logout</a>";
 }
 ?>

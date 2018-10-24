@@ -10,35 +10,59 @@
   }
 
   if(isset($_POST["login"]))
-  {
-  $query = "
-  SELECT * FROM users WHERE username = ?
-  ";
-  $statement = $conn->prepare($query);
-  $statement->execute([$_POST["username"]]);
-  $count = $statement->rowCount();
-  if($count > 0)
-  {
-    $result = $statement->fetchAll();
-      foreach($result as $row)
-      {
-        if(password_verify($_POST["password"], $row["password"]))
+    {
+    $query = "
+    SELECT * FROM users WHERE username = ?
+    ";
+    $statement = $conn->prepare($query);
+    $statement->execute([$_POST["username"]]);
+    $count = $statement->rowCount();
+    if($count > 0)
+    {
+      $result = $statement->fetchAll();
+        foreach($result as $row)
         {
-          $_SESSION['user_id'] = $row['user_id'];
-          $_SESSION['username'] = $row['username'];
-          header("location:index.php");
+          if(password_verify($_POST["password"], $row["password"]))
+          {
+            $_SESSION['user_id'] = $row['user_id'];
+            $_SESSION['username'] = $row['username'];
+            header("location:index.php");
+          }
+          else
+          {
+          $message = "<label>Wrong Password</label>";
+          }
         }
-        else
-        {
-        $message = "<label>Wrong Password</label>";
-        }
-      }
-  }
-  else
-  {
-    $message = "<label>WrongL Username</label>";
-  }
-  }
+    }
+    else
+    {
+      $message = "<label>Wrong Username</label>";
+    }
+}
+
+if(isset($_POST["register"]))
+{
+$query = "
+SELECT * FROM users WHERE username = ?
+";
+$statement = $conn->prepare($query);
+$statement->execute([$_POST["username"]]);
+$count = $statement->rowCount();
+if($count == 0)
+{
+  addUser($_POST["username"],$_POST["password"]);
+  $stmt = $conn->prepare("SELECT user_id FROM users WHERE username=?");
+  $stmt->execute([$_POST["username"]]);
+  $_SESSION['user_id']= $stmt->fetch()[0];
+  $_SESSION['username'] = $_POST['username'];
+  header("location:index.php");
+  $message=$_SESSION["user_id"];
+}
+else
+{
+  $message = "<label>Username exists</label>";
+}
+}
 ?>
 
 
@@ -57,17 +81,18 @@
         <table >
 
         <tr class="text">
-        <td><label class="label">Enter Username</label></td>
-        <td><input type="text" name="username" required /></td>
+        <td style="text-align:center;"><label class="label">Enter Username</label></td>
+        <td style="text-align:center;"><input type="text" name="username" required /></td>
         </tr>
 
         <tr class="text">
-        <td><label class="label">Enter Password</label></td>
-        <td><input type="password" name="password" required /></td>
+        <td style="text-align:center;"><label class="label">Enter Password</label></td>
+        <td style="text-align:center;"><input type="password" name="password" required /></td>
         </tr>
 
         <tr>
-        <td colspan=2 style="text-align:center;"><input class="button" type="submit" name="login" value="Login" /></td>
+        <td style="text-align:center;"><input class="button" type="submit" name="login" value="Login" /></td>
+        <td style="text-align:center;"><input class="button" type="submit" name="register" value="Register" /></td>
         </tr>
 
         </table>

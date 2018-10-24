@@ -1,12 +1,11 @@
 <?php
 
-$servername = "localhost:";
+$servername = "localhost";
 $username = "root";
 $password = "";
 $dbname   = "compare";
 
-ini_set('session.cookie_lifetime', 60 * 60 * 24 * 7); 
-$conn = new PDO("mysql:host=localhost", $username, $password);
+$conn = new PDO("mysql:host=$servername", $username, $password);
 $conn->exec("use $dbname");
 function resetdb() {
     global $conn,$dbname;
@@ -18,7 +17,8 @@ function resetdb() {
     CREATE TABLE users(
         user_id int PRIMARY KEY AUTO_INCREMENT,
         username varchar(32) ,
-        password varchar(200)
+        password varchar(200),
+        type varchar(32)
     );");
 
     $stmt=$conn->prepare("INSERT INTO users (username,password) VALUES(?,?)");
@@ -65,5 +65,10 @@ function getUserName($id){
     $stmt->execute();
     $result = $stmt->fetch();
     return $result['username'];
+}
+function addUser($username,$password) {
+    global $conn;
+    $stmt=$conn->prepare("INSERT INTO users (username,password) VALUES(?,?)");
+    $stmt->execute([$username,password_hash($password, PASSWORD_DEFAULT)]);
 }
 ?>
