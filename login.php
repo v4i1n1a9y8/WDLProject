@@ -52,20 +52,26 @@
     <?php echo file_get_contents("modules/header.html");?>
     <?php   include "modules/navigation.php";?>
     <div  id="mainbody" class="login">
-    <form method="post"  class="abc" >
+    <form method="post"  class="loginform" >
         <p ><?php echo $message; ?></p>
-        <div class="text">
-        <label class="label">Enter Username</label>
-        <input type="text" name="username" required />
-        </div>
-        <div class="text">
-        <label class="label">Enter Password</label>
-        <input type="password" name="password" required />
-        </div>
-        <div >
-        <input class="button" type="submit" name="login" value="Login" />
-        </div>
-        </form>
+        <table >
+
+        <tr class="text">
+        <td><label class="label">Enter Username</label></td>
+        <td><input type="text" name="username" required /></td>
+        </tr>
+
+        <tr class="text">
+        <td><label class="label">Enter Password</label></td>
+        <td><input type="password" name="password" required /></td>
+        </tr>
+
+        <tr>
+        <td colspan=2 style="text-align:center;"><input class="button" type="submit" name="login" value="Login" /></td>
+        </tr>
+
+        </table>
+    </form>
     </div>
     <?php echo file_get_contents("modules/footer.html");?>
     </div>

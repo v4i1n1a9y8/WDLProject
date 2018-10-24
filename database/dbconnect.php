@@ -5,8 +5,9 @@ $username = "root";
 $password = "";
 $dbname   = "compare";
 
-$conn = new PDO("mysql:host=localhost;dbname=$dbname", $username, $password);
-
+ini_set('session.cookie_lifetime', 60 * 60 * 24 * 7); 
+$conn = new PDO("mysql:host=localhost", $username, $password);
+$conn->exec("use $dbname");
 function resetdb() {
     global $conn,$dbname;
     $conn->exec("
@@ -56,5 +57,13 @@ function addmobile($name,$company,$os,$processor,$ram,$camera,$price,$storage,$b
     global $conn;
     $stmt=$conn->prepare("INSERT INTO mobiles (name,company,os,processor,ram,camera,price,storage,batterysize,image) VALUES(?,?,?,?,?,?,?,?,?,?)");
     $stmt->execute([$name,$company,$os,$processor,$ram,$camera,$price,$storage,$batterysize,$image]);
+}
+
+function getUserName($id){
+    global $conn;
+    $stmt=$conn->prepare("select username from users where user_id=$id");
+    $stmt->execute();
+    $result = $stmt->fetch();
+    return $result['username'];
 }
 ?>

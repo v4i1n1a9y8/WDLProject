@@ -83,7 +83,7 @@ a.block:link,a.block:visited,a.block:active {
     left: 0;
     z-index: 10;
 }
-
+/*
 table ,td,th{
     border-collapse: collapse;
     border: 3px solid #05ac4a;
@@ -97,7 +97,7 @@ table {
 td,th {
     padding:20px;
 }
-
+*/
 .nav {
     padding: 10px;
     border-radius: 5px;
@@ -119,37 +119,42 @@ input,option,select{
     margin:50px;
 }
 
-.abc {
-    
-    display:block;
+.loginform {
     background: var(--secondarycolor);
     color:white;
-    height: 200px;
     margin:10px;
-    padding-left: 20px;
     float:left;
     box-shadow: 0 2px 4px 0 #6b6e70, 0 4px 12px 0 #6b6e70;
     padding: 40px;
 }
 
-.login{
+.loginform table {
+    border-collapse: collapse;
+    border-radius: 30px;
+    border-style: hidden; /* hide standard table (collapsed) border */
+    box-shadow: 0 0 0 3px #16ffbd;;
+}
 
-    padding-left: 200px;
+.loginform td,th {
+    padding:20px;
+}
+.loginform td {
+    font-weight: bold;
+    border: 3px solid #16ffbd;
+}
+
+.login{
+    padding-left: 150px;
     padding-top: 10px;
     height: 500px;
 }
 .text{
-
     padding: 10px;
-
-
 }
+
 .label{
 
     padding: 10px;
-    
-
-
 }
 .button{
     background-color: #05ac4a;
@@ -169,7 +174,9 @@ input,option,select{
 .compare td,th{
     padding-left:50px;
     padding-right:50px;
-    padding-top:5px;
-    padding-bottom:5px;
+    padding-top:25px;
+    padding-bottom:25px;
+}
+.compare th{
     font-weight: bold;
 }

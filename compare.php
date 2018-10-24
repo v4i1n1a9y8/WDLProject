@@ -47,7 +47,7 @@ function showMobile(str,num) {
 <?php   include "modules/navigation.php";?>
 <div id="mainbody">
 
-<div class=block style="width:45%">
+<div class=block style="width:46%">
 <form>
 <select name="select1" onchange="showMobile(this.value,1)">
 <option value="">Select a mobile:</option>
@@ -61,7 +61,7 @@ function showMobile(str,num) {
 <div id="mobile1" class="block"></div>
 </div>
 
-<div class=block style="float:right;width:45%">
+<div class=block style="float:right;width:46%">
 <form>
 <select name="select2" onchange="showMobile(this.value,2)">
 <option value="">Select a mobile:</option>
@@ -69,7 +69,7 @@ function showMobile(str,num) {
 </select>
 </form>
 
-<div id="mobile2" class="block"></div>
+<div id="mobile2" class="block" style="float:right"></div>
 </div>
 </div>
 <?php echo file_get_contents("modules/footer.html");?>

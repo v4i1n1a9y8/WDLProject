@@ -19,7 +19,7 @@
       document.getElementById("mobile").innerHTML=this.responseText;
     }
   }
-  xmlhttp.open("GET","database/getMobile.php?id="+<?php echo $id?>,true);
+  xmlhttp.open("GET","database/getBrowse.php?id="+<?php echo $id?>,true);
   xmlhttp.send();
 </script>
     </head>
@@ -30,7 +30,7 @@
 <div id="mainbody">
 
 
-<div id="mobile" class="block"></div>
+<div id="mobile" class="block" style="margin-left:30px"></div>
 
 </div>
 <?php echo file_get_contents("modules/footer.html");?>

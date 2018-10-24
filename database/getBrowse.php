@@ -16,9 +16,9 @@ $output="
 foreach($result as $row){
     $output .= '
     <tr>
-    <td colspan="2"><img style="
-    width:200px;
-    height:200px;" src="'.$row['image'].'"></td>
+    <td colspan="8" rowspan="9"><img style="
+    width:400px;
+    height:500px;" src="'.$row['image'].'"></td>
     </tr>
     <tr>
     <th>Price:</th><td style="
