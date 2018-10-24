@@ -13,10 +13,13 @@ else
 {
     $var = $_SESSION["username"];
     echo "<a class='block nav' style='float:right;background-color:red' href='../logout.php'>$var Logout</a>";
+    echo "<a class='block nav' style='float:right' href='../favourites.php'>Favourites</a> ";
+    if(isset($_SESSION['admin'])){
+        echo "<a class='block nav' style='float:right' href='../manage.php'>Manage</a>";
+    }
 }
 ?>
 
-<a class="block nav" style="float:right" href="../manage.php">Manage</a> 
 <a class="block nav" style="float:right" href="../contact.php">Contact</a> 
 <a class="block nav" style="float:right" href="../about.php">About</a> 
 <br><br>

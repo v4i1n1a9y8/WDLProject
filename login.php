@@ -26,6 +26,11 @@
           {
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['username'] = $row['username'];
+
+            if($row["type"]=="admin"){
+                $_SESSION['admin']=1;
+            }
+
             header("location:index.php");
           }
           else

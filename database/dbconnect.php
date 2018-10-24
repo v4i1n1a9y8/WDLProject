@@ -29,6 +29,9 @@ function resetdb() {
     $stmt->execute(["rakesh",password_hash("password", PASSWORD_DEFAULT)]);
     $stmt->execute(["prasad",password_hash("password", PASSWORD_DEFAULT)]);
     
+    $stmt=$conn->prepare("INSERT INTO users (username,password,type) VALUES(?,?,?)");
+    $stmt->execute(["root",password_hash("password", PASSWORD_DEFAULT),"admin"]);
+
     $conn->exec("
     CREATE TABLE mobiles(
         mobile_id int PRIMARY KEY AUTO_INCREMENT,
@@ -51,10 +54,10 @@ function resetdb() {
     $stmt->execute(["Redmi Note 5 Pro","Xiaomi","android","Snapdragon 636","4GB","images/note5pro.jpeg"]);
     }*/
     addmobile("Honor 7x","Huawei","android","Kirin 659","4GB","16+2","12,999","64gb","3300mah","images/honor7x.png");
-    addmobile("Honor 8x","Huawei","android","Kirin 659","4GB","16+2","12,999","64gb","3300mah","images/honor8x.jpeg");
-    addmobile("Realme 2 Pro","Huawei","android","Kirin 659","4GB","16+2","12,999","64gb","3300mah","images/realme2pro.jpeg");
-    addmobile("Mi A2","Huawei","android","Kirin 659","4GB","16+2","12,999","64gb","3300mah","images/mia2.jpeg");
-    addmobile("Nokia","Huawei","android","Kirin 659","4GB","16+2","12,999","64gb","3300mah","images/nokia.jpeg");
+    addmobile("Honor 8x","Huawei","android","Kirin 710","4GB","20+2","14,999","64gb","3750mAh","images/honor8x.jpeg");
+    addmobile("Realme 2 Pro","RealMe","android","Qualcomm Snapdragon 660","8GB","16+2","13,990","128gb","3500mah","images/realme2pro.jpeg");
+    addmobile("Mi A2","Xiaomi","android","Qualcomm Snapdragon 660","4GB","16+2","16,659","64gb","3000mah","images/mia2.jpeg");
+    addmobile("Nokia 6.1 plus","Nokia","android","Qualcomm Snapdragon 636","4GB","16+5","15,999","64gb","3060mah","images/nokia.jpeg");
 
 
     $conn->exec("
