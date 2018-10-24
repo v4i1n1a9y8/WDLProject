@@ -12,7 +12,7 @@
     width:70%;
     height:30%;
 }
-a.article-link:visited{
+a.article-link:visited,a.article-link:link{
     color:#05ac4a;
 }
     </style>

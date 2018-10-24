@@ -12,6 +12,7 @@
 }
 
 body {
+    color:white;
     font-size: 20px;
     /*background-color:  var(--background);*/
     margin: 0;
@@ -57,7 +58,7 @@ body {
     line-height: 20px;
     color: white;
 }
-*/
+
 /*---------------------------------------------*/
 .block {
     display:block;
@@ -163,4 +164,12 @@ input,option,select{
     padding: 10px;
     border-radius: 5px;
     color:  #ccff99;
+}
+
+.compare td,th{
+    padding-left:50px;
+    padding-right:50px;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-weight: bold;
 }

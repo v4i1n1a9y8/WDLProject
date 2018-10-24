@@ -10,7 +10,7 @@ $stmt->execute();
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $output="
-<table>
+<table class='compare'>
 ";
 
 foreach($result as $row){
@@ -19,6 +19,12 @@ foreach($result as $row){
     <td colspan="2"><img style="
     width:200px;
     height:200px;" src="'.$row['image'].'"></td>
+    </tr>
+    <tr>
+    <td>Price:</td><td style="
+        color:lime;
+        text-decoration: underline;
+    ">'.$row['price'].' ₹</td>
     </tr>
     <tr>
     <td>Name:</td><td>'.$row['name'].'</td>
@@ -40,9 +46,6 @@ foreach($result as $row){
     </tr>
     <tr>
     <td>Battery:</td><td>'.$row['batterysize'].'</td>
-    </tr>
-    <tr>
-    <td>Price:</td><td>'.$row['price'].'</td>
     </tr>
     ';
 }

@@ -2,7 +2,7 @@
 
 $servername = "localhost:";
 $username = "root";
-$password = "admin@123";
+$password = "";
 $dbname   = "compare";
 
 $conn = new PDO("mysql:host=localhost;dbname=$dbname", $username, $password);
