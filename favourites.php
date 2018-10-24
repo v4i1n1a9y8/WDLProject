@@ -5,9 +5,10 @@
   $mobiles = "";
   
 
-
+$uid = $_SESSION["user_id"];
   $query = "
-  SELECT * FROM mobiles
+  SELECT * FROM favourites
+  WHERE user_id=$uid
   ";
   $statement = $conn->prepare($query);
   $statement->execute();
@@ -17,13 +18,20 @@
         $result = $statement->fetchAll();
         foreach($result as $row)
         {
+            $stmt = $conn->prepare("SELECT image,name from mobiles where mobile_id=?");
+            $stmt->execute([$row["mobile_id"]]);
+            $image = $stmt->fetch();
             $mobiles .="
-            <a id=".$row["mobile_id"]." class='block mobile' href='mobile.php?id=".$row["mobile_id"]."'>
-            <img src=".$row["image"]." style='
+            <a id=".$row["mobile_id"]." class='block ' style='float:left;width:70%' href='mobile.php?id=".$row["mobile_id"]."'>
+            <img src=".$image[0]." style='
             width:100px;
             height:90px;'>"
-            ."<br>".$row["name"].
-            "</a>";
+            ."<br>".$image[1].
+            "</a>
+            <a id=".$row["mobile_id"]." class='block '  href='database/deletefav.php?id=".$row["mobile_id"]."'>
+            delete
+            </a>
+            ";
         }
     }
     else
@@ -44,7 +52,7 @@
 <div id="mainbody">
 
     <div class="block" style="padding-left:80px;">
-   
+   <h3> Favourites</h3>
 
     
     <?php echo $mobiles ?>

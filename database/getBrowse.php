@@ -47,6 +47,11 @@ foreach($result as $row){
     <tr>
     <th>Battery:</th><td>'.$row['batterysize'].'</td>
     </tr>
+    <tr>
+    <td>
+    <a href="database/favmobile.php?id='.$id.'">Add to favourites</a>
+    </td>
+    </tr>
     ';
 }
     $output .="</table>";
