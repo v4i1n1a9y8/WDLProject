@@ -22,7 +22,7 @@
             <img src=".$row["image"]." style='
             width:100px;
             height:90px;'>"
-            ."<br>".$row["mobile_id"]." ".$row["name"].
+            ."<br>".$row["name"].
             "</a>";
         }
     }

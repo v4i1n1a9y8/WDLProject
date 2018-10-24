@@ -47,6 +47,10 @@ function resetdb() {
     $stmt->execute(["Redmi Note 5 Pro","Xiaomi","android","Snapdragon 636","4GB","images/note5pro.jpeg"]);
     }*/
     addmobile("Honor 7x","Huawei","android","Kirin 659","4GB","16+2","12,999","64gb","3300mah","images/honor7x.png");
+    addmobile("Honor 7x","Huawei","android","Kirin 659","4GB","16+2","12,999","64gb","3300mah","images/honor7x.png");
+    addmobile("Honor 7x","Huawei","android","Kirin 659","4GB","16+2","12,999","64gb","3300mah","images/honor7x.png");
+    addmobile("Honor 7x","Huawei","android","Kirin 659","4GB","16+2","12,999","64gb","3300mah","images/honor7x.png");
+    addmobile("Honor 7x","Huawei","android","Kirin 659","4GB","16+2","12,999","64gb","3300mah","images/honor7x.png");
 }
 function addmobile($name,$company,$os,$processor,$ram,$camera,$price,$storage,$batterysize,$image){
     global $conn;

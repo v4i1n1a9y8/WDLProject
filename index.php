@@ -22,7 +22,7 @@ a.article-link:visited{
 <?php echo file_get_contents("modules/header.html");?>
 <?php   include "modules/navigation.php";?>
 <div id="mainbody">
-<div class="block"  style="overflow:hidden;width:30%;height:50%;float:right;padding-top:0px;padding-bottom:0px">
+<div class="block"  style="overflow:hidden;width:30%;height:340px;float:right;">
     <h3>Updates</h3>
     <hr>
     <marquee direction = "up">
@@ -82,7 +82,7 @@ Pixel 3 XL Users Report 'Buzzing' Sound, Google to Fix Photo Saving Bug </div>
 
 <br><br><br>
 
-<div class="block"  style="margin-top:50px;overflow:hidden;width:30%;height:50%;float:right;padding-top:0px;padding-bottom:0px">
+<div class="block"  style="margin-top:50px;overflow:hidden;width:30%;height:300px;float:right;padding-top:0px;padding-bottom:0px">
     <h3>Offers</h3>
     <hr>
     <marquee direction = "up">
