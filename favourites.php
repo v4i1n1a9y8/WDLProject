@@ -28,7 +28,7 @@ $uid = $_SESSION["user_id"];
             height:90px;'>"
             ."<br>".$image[1].
             "</a>
-            <a id=".$row["mobile_id"]." class='block '  href='database/deletefav.php?id=".$row["mobile_id"]."'>
+            <a id=".$row["mobile_id"]." class='block del'  href='database/deletefav.php?id=".$row["mobile_id"]."'>
             delete
             </a>
             ";

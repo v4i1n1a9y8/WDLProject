@@ -49,7 +49,7 @@ foreach($result as $row){
     </tr>
     <tr>
     <td>
-    <a href="database/favmobile.php?id='.$id.'">Add to favourites</a>
+    <a class="fav" href="database/favmobile.php?id='.$id.'">Add to favourites</a>
     </td>
     </tr>
     ';

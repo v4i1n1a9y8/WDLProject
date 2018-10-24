@@ -180,3 +180,10 @@ input,option,select{
 .compare th{
     font-weight: bold;
 }
+
+a.fav:visited,a.fav:link {
+    color:pink;
+}
+a.del:visited,a.del.link {
+    color:red;
+}
