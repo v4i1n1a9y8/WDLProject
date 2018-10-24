@@ -10,6 +10,7 @@ $statement = $conn->prepare($query);
 $statement->execute();
 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 $count = $statement->rowCount();
+
   if($count > 0)
   {
     foreach($result as $row){

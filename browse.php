@@ -44,14 +44,7 @@
 <div id="mainbody">
 
     <div class="block" style="padding-left:80px;">
-    <a class="block mobile" href="browse.php">
-        <div >
-    <img src="images/nexus6p.jpeg" style="
-        width:100px;
-        height:90px;">
-        </div>
-    Honor7x
-    </a>
+   
 
     
     <?php echo $mobiles ?>

@@ -86,6 +86,7 @@ body {
     padding: 45px 0 10px 0;
     text-align: center;
     line-height: 20px;
+    color: white;
 }
 /*-----------------------------------------------*/
 /*
@@ -160,7 +161,13 @@ a.block:link,a.block:visited,a.block:active {
 
 table ,td,th{
     border-collapse: collapse;
-    border: 10px solid var(--secondarycolor);
+    border: 3px solid #05ac4a;
+    color: white;
+}
+
+table {
+
+    border-radius: 20px;
 }
 td,th {
     padding:20px;
@@ -225,4 +232,11 @@ input,option,select{
     margin:0 100 0 100;
     height: 30px;
     width: 100px;
+}
+
+.updates {
+    border: 3px solid #05ac4a;
+    padding: 10px;
+    border-radius: 5px;
+    color:  #ccff99;
 }

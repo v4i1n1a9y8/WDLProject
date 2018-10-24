@@ -18,4 +18,5 @@ else
 <a class="block nav" style="float:right" href="../manage.php">Manage</a> 
 <a class="block nav" style="float:right" href="../contact.php">Contact</a> 
 <a class="block nav" style="float:right" href="../about.php">About</a> 
-<br><br><br>
+<br><br>
+<hr>

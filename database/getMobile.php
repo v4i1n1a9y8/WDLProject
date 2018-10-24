@@ -32,6 +32,18 @@ foreach($result as $row){
     <tr>
     <td>Ram:</td><td>'.$row['ram'].'</td>
     </tr>
+    <tr>
+    <td>Storage:</td><td>'.$row['storage'].'</td>
+    </tr>
+    <tr>
+    <td>Camera:</td><td>'.$row['camera'].'</td>
+    </tr>
+    <tr>
+    <td>Battery:</td><td>'.$row['batterysize'].'</td>
+    </tr>
+    <tr>
+    <td>Price:</td><td>'.$row['price'].'</td>
+    </tr>
     ';
 }
     $output .="</table>";
